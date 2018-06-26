@@ -1,6 +1,6 @@
 # Loteria Fácil ♣
 
-Sistema de uso pessoal baseado na loteria, apenas com o intuito de testar a linguagem em que estou estudando atualmente.
+Sistema de uso pessoal baseado na loteria, apenas com o intuito de testar a linguagem em que estou estudando atualmente (Python+Flask).
 
 Imagens do projeto podem ser acessadas em [Loteria Fácil - Imagens](https://drive.google.com/folderview?id=121vKkNHt1FrecUyWdeal1Qf7-Pu0hfz3), meu portfólio. 
 
@@ -15,7 +15,7 @@ Com este sistema é possível aplicar os conhecimento:
 * Orientação a Objeto;
 
 ### Versionamento
-* Git com Bitbucket
+* Git
 
 ### Banco Sql Server
 * Functions;
