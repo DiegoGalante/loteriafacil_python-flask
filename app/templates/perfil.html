@@ -1,0 +1,234 @@
+<!--Extende da página base o conteúdo dela-->
+{% extends 'base.html' %}
+
+  {% block content %}
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="margin-left: 0;" >
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+             <div class="overlay hide" id="divCarregando">
+                <i class="fa fa-refresh fa-spin"></i>
+              </div>
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-md-5">
+                  <h5 class="card-title">Concurso 1663 - 16/05/2018</h5>  
+                  </div>
+                <div class="input-group col-md-3" style="height:30px;">
+                  <input type="text" class="form-control" placeholder="Concurso">
+                  <div class="input-group-append">
+                    <span class="input-group-text"><i class="fa fa-search"></i></span>
+                  </div>
+                </div>
+                  <div class="col-md-4 text-right">
+                    <div class="card-tools">
+                      <button type="button" class="btn btn-tool" data-widget="collapse">
+                        <i class="fa fa-minus"></i>
+                      </button>
+                      <button type="button" class="btn btn-tool" title="Enviar E-mail" id="btn-email">
+                        <i class="fa fa-envelope"></i>
+                        </button>
+                      <div class="btn-group">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-wrench"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                          <a href="#" class="dropdown-item"></a>
+                          <a href="#" class="dropdown-item">Another action</a>
+                          <a href="#" class="dropdown-item">Something else here</a>
+                          <a class="dropdown-divider"></a>
+                          <a href="#" class="dropdown-item">Separated link</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+
+              
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div id="divEmail" class="col-md-12 hide">
+                  <div class="callout callout-success text-success">
+                      <h5>
+                      <i class="fa fa-check-circle"></i> E-mail Enviado com sucesso!</span>
+                      </h5>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="col-md-8">
+                    <p class="text-center border-bottom">
+                      <strong>01-02-03-05-06-07-09-11-12-13-16-17-21-22-23</strong>
+                    </p>
+
+                    <div class="chart">
+                      <!-- Sales Chart Canvas -->
+                      <canvas id="loto-chart" height="192" style="height: 270px; width: 680px;" width="680"></canvas>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+
+                  <div class="col-md-4">
+                    <p class="text-center">
+                      <strong id="pontuacaoPopover" title="Legenda - Cores" data-toggle="popover" data-trigger="hover" data-placement="bottom"  data-html="true"
+                      data-content="
+                      <div style='display:block;'>
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-danger' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 15 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-success' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 14 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-warning' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 13 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-info' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 12 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-info' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 11 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-gray' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> Sem Pontuação</strong></span>
+                      </p>
+                    </div>
+                      "
+                      >Pontuação</strong>
+                    </p>
+
+                     <div class="progress-group">
+                      <a href="#" title="Autor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Diego Galante - R$ 4,00">Jogo  #99</a> - <strong>11</strong> dezenas sorteadas!
+                      <span class="float-right"><b><span class="badge bg-info">11</span></b> / <span class="badge bg-danger">15</span></span>
+                      <div class="progress progress-sm active">
+                        <div class="progress-bar bg-info progress-bar-striped" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="15" id="progressBar1">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+
+                    <div class="progress-group">
+                      <a title="Autor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Diego Galante">Jogo  75</a> - 8 dezenas sorteadas!
+                      <span class="float-right"><b><span class="badge bg-gray">8</span></b> / <span class="badge bg-danger">15</span></span>
+                      <div class="progress progress-sm active">
+                        <div class="progress-bar bg-gray progress-bar-striped" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="15" id="progressBar2">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+
+                     <div class="progress-group">
+                      <a title="Autor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Diego Galante">Jogo  76</a> - 9 dezenas sorteadas!
+                      <span class="float-right"><b><span class="badge bg-gray">9</span></b> / <span class="badge bg-danger">15</span></span>
+                      <div class="progress progress-sm active">
+                        <div class="progress-bar bg-gray progress-bar-striped" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="15" id="progressBar3">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+
+                     <div class="progress-group">
+                      <a title="Autor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Diego Galante">Jogo  77</a> - 10 dezenas sorteadas!
+                      <span class="float-right"><b><span class="badge bg-gray">10</span></b> / <span class="badge bg-danger">15</span></span>
+                      <div class="progress progress-sm active">
+                        <div class="progress-bar bg-gray progress-bar-striped" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="15" id="progressBar4">
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.progress-group -->
+                    
+                    <div class="col-sm-12 col-6">
+                      <div class="description-block">
+                        <p class="text-center">
+                          <strong>Quantia a Recolher dos Bilhetes</strong>
+                        </p>
+                        <h5 class="description-header text-success">R$ 4,00 <i class="fa fa-check"></i></h5>
+                        <span class="description-text">11 pontos</span>
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                  </div>
+                  <!-- /.col -->
+
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- ./card-body -->
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-success" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A mais que o concurso passado!"><i class="fa fa-caret-up"></i> 17%</span>
+                      <h5 class="description-header">R$ 635.210,43</h5>
+                      <span class="description-text">15 Pontos</span>
+                      <br/>
+                      <span>8 Ganhadores</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-warning" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Mesmo valor que o concurso passado!"><i class="fa fa-caret-left"></i> 0%</span>
+                      <h5 class="description-header">R$ 10.390,90</h5>
+                      <span class="description-text">14 Pontos</span>
+                      <br/>
+                      <span>1197 Ganhadores</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage text-success" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A mais que o concurso passado!"><i class="fa fa-caret-up"></i> 20%</span>
+                      <h5 class="description-header">R$ 4.813,53</h5>
+                      <span class="description-text">13 Pontos</span>
+                      <br/>
+                      <span>39565 Ganhadores</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-3 col-6">
+                    <div class="description-block">
+                      <span class="description-percentage text-danger" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A menos que o concurso passado!"><i class="fa fa-caret-down"></i> 18%</span>
+                      <h5 class="description-header">R$ 8,00</h5>
+                      <span class="description-text">12 Pontos</span>
+                      <br/>
+                      <span>262486 Ganhadores</span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+  </div>
+  {% endblock %}
+

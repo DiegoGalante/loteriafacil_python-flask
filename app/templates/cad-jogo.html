@@ -1,0 +1,555 @@
+<!--Extende da página base o conteúdo dela-->
+{% extends 'base.html' %} {% block content %}
+
+<div class="content-wrapper" style="margin-left: 0;">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="overlay hide" id="divCarregando">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </div>
+
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 border-right">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Cadastro de Jogos</h3>
+                                        </div>
+                                        <!-- $('#bg21').find('span')[0].innerText -->
+                                        <div class="row" style="margin: 10px 35px;">
+                                            <div class="form-group">
+                                                <label>Escolha um tipo de jogo</label>
+                                                <select class="form-control">
+                                                    <option>Escolher</option>
+                                                    <option>Jogo Livre</option>
+                                                    <option>11 Fixas + 7 Grupos</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="row col-md-12" style="display: inline-flex;">
+                                                <div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">01</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num6">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">06</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num11">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">11</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box text-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num16">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">16</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-primary" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num21">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">21</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num2">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">02</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num7">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">07</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num12">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">12</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box text-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num17">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">17</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num22">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">22</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num3">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">03</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num8">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">08</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num13">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">13</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-success" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num18">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">18</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num23">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">23</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num4">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">04</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num9">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">09</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-warning" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num14">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">14</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-success" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num19">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">19</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num24">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">24</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num5">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">05</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num10">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">10</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-warning" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num15">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">15</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-primary" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num20">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">20</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-3" style="display: grid;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num25">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">25</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Jogo</h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- 
+                                                data-show-refresh="true" 
+                                                data-show-export="true" -->
+                                        <div class="card-body">
+                                            <div>
+                                                <h5>Dezenas Fixas:</h5>
+
+                                                <div class="row">
+                                                    <div style="margin: 0 auto; padding: 0 auto;" class="row">
+                                                        <h6 id="dezenasFixas" style="margin: 5px 10px;"></h6>
+                                                        <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">01</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+                                                    <div class="info-box bg bg-gray" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                        id="num1">
+                                                        <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                            <span class="info-box-number">01</span>
+                                                        </div>
+                                                        <!-- /.info-box-content -->
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                            <div>
+                                                <h5>Grupos de Dezenas:</h5>
+                                                <div class="row">
+                                                    <h6 id="g1" class="text-info" style="margin: 5px 10px;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">12</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">13</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                    <h6 id="g2" class="text-warning" style="margin: 5px 10px;">
+                                                        <div class="info-box bg-warning" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">14</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-warning" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">15</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+
+                                                    </h6>
+                                                    <h6 id="g3" class="text-gray" style="margin: 5px 10px;">
+                                                        <div class="info-box text-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">16</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box text-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">17
+                                                                </span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                    <h6 id="g4" class="text-success" style="margin: 5px 10px;">
+                                                        <div class="info-box bg bg-success" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">18</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-success" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">19</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                    <h6 id="g5" class="text-primary" style="margin: 5px 10px;">
+                                                        <div class="info-box bg bg-primary" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">20</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-primary" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">21</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                    <h6 id="g6" class="text-danger" style="margin: 5px 10px;">
+                                                        <div class="info-box bg bg-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">22</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-danger" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">23</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                    <h6 id="g7" class="text-info" style="margin: 5px 10px;">
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">24</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                        <div class="info-box bg bg-info" style="width: 50px;  min-height: 44px; padding: 0px 2px 0px 0px; margin: 0 auto; text-align: center; font-size: 18px; cursor: pointer;"
+                                                            id="num1">
+                                                            <div class="info-box-content" style="padding: 10px 10px 10px 14px;">
+                                                                <span class="info-box-number">25</span>
+                                                            </div>
+                                                            <!-- /.info-box-content -->
+                                                        </div>
+                                                    </h6>
+                                                </div>
+                                            </div>
+                                            <div style="margin: 15px 0px;">
+                                                <button type="button" class="btn btn-primary">Gerar Jogo</button>
+                                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                            </div>
+                                            <table id="tbPlayers" data-locale="pt-BR" data-toolbar="#toolbar" data-toggle="table" data-id-field="id" data-page-list="[10, 25, 50, 100, ALL]"
+                                                data-pagination="true" data-search="true" data-search-align="left" data-buttons-align="right"
+                                                data-toolbar-align="right" data-striped="true" data-single-select="true" class="border-top border-bottom table table-hover"
+                                                style="margin-top: 0px;  text-align: center; margin: 30px 0px; padding-bottom: 20px;">
+                                                <thead>
+                                                    <tr>
+                                                        <!-- <th data-field="state" data-checkbox="true"></th>
+                                                            <th data-formatter="runningFormatter">Index</th> -->
+                                                        <th data-field="name" data-formatter="nameFormatter" data-sortable="true">Dezenas</th>
+                                                        <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents" data-width="150">Ação</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                            <div style="margin: 15px 0px;">
+                                                <button type="button" class="btn btn-success">Salvar Jogos</button>
+                                                <button type="button" class="btn btn-danger">Cancelar</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div>
+                            </div>
+                        </div>
+                        <!-- ./card-body -->
+                        <div class="card-footer">
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+</div>
+
+
+
+{% endblock %} {% block script %}
+<!-- 
+<script src="../static/js/table/extensions/export/bootstrap-table-export.min.js"></script> -->
+<!-- 
+
+<link href="../static/css/bootstrap-table.css" rel="stylesheet"> -->
+<!-- <script src="../static/js/table/bootstrap-editable.min.js"></script> -->
+<link rel="stylesheet" href="../static/css/bootstrap-editable.css">
+
+
+
+<script src="../static/js/table/bootstrap-table.min.js"></script>
+<script src="../static/js/table/bootstrap-table-locale-all.min.js"></script>
+<link rel="stylesheet" href="../static/js/table/bootstrap-table.min.css">
+
+
+<script src="{{ url_for('static', filename=" js/pages/players/players.js ")}}"></script> {% endblock %}

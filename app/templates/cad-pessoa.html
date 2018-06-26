@@ -1,0 +1,170 @@
+﻿<!--Extende da página base o conteúdo dela-->
+{% extends 'base.html' %} {% block content %}
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper" style="margin-left: 0;">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="overlay hide" id="divCarregando">
+                            <i class="fa fa-refresh fa-spin"></i>
+                        </div>
+                      <!--  <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h5 class="card-title">Cadastro de Pessoas</h5>
+                                </div> -->
+                                <!-- <div class="col-md-4 text-right">
+                                    <div class="card-tools">
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                                                <i class="fa fa-wrench"></i>
+                                            </button>
+                                            <div class="dropdown-menu dropdown-menu-right" role="menu">
+                                                <a href="#" class="dropdown-item"></a>
+                                                <a href="#" class="dropdown-item">Another action</a>
+                                                <a href="#" class="dropdown-item">Something else here</a>
+                                                <a class="dropdown-divider"></a>
+                                                <a href="#" class="dropdown-item">Separated link</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div> -->
+
+                         <!--   </div>-->
+
+                        <!--</div>-->
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4 border-right">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Cadastro Jogadores</h3>
+                                        </div>
+                                        <div class="card-body" >
+                                            <form role="form">
+                                                <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="txtName">Nome</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text" id="">
+                                                                <i class="fa fa-user"></i>
+                                                            </span>
+                                                        </div>
+                                                        <input type="text" class="form-control" id="txtName" placeholder="Nome">
+                                                    </div>
+                                                </div>
+                                                <label for="txtEmail">E-mail</label>
+                                                <div class="input-group">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text" id="">
+                                                            <i class="fa fa-envelope"></i>
+                                                        </span>
+                                                    </div>
+                                                    <input type="text" class="form-control" id="txtEmail" placeholder="E-mail">
+                                                </div>
+                                                            <!--                                                     <br />
+                                                        <label for="exampleInputFoto1">Foto</label>
+                                                        <div class="input-group">
+                                                            <div class="input-group-append">
+                                                                <span class="input-group-text" id="">
+                                                                    <i class="fa fa-photo"></i>
+                                                                </span>
+                                                            </div>
+                                                            <div class="custom-file">
+                                                                <input type="file" class="custom-file-input" id="exampleInputFile">
+                                                                <label class="custom-file-label" for="exampleInputFoto1">Choose file</label>
+                                                            </div>
+                                                        </div> -->
+                                                <br />
+                                                <label for="chkActive">Configurações</label>
+                                                <div class="input-group">
+                                                    <div class="form-check">
+                                                        <input type="checkbox" class="form-check-input" id="chkActive">
+                                                        <label class="form-check-label" for="chkActive">Ativo</label>
+                                                    </div>
+                                                </div>                                                    </div>
+                                                <!-- /.card-body -->
+                                                <div class="card-footer hide" id="btns">
+                                                    <button id="btnSave" type="button" class="btn btn-primary">Salvar</button>
+                                                    <button id="btnCancel" type="button" class="btn btn-danger">Cancelar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title">Jogadores</h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <!-- 
+                                            data-show-refresh="true" 
+                                            data-show-export="true" -->
+                                        <div class="card-body">
+                                            <table id="tbPlayers" data-locale="pt-BR"
+                                            data-toolbar="#toolbar" data-toggle="table"
+                                            data-id-field="id" data-page-list="[10, 25, 50, 100, ALL]"  data-pagination="true"
+                                            data-search="true" 
+                                            data-search-align="left" data-buttons-align="right" data-toolbar-align="right" 
+                                            data-striped="true"
+                                            data-single-select="true"
+                                            class="table table-hover" style="margin-top: 0px;  text-align: center;" >
+                                                <thead>
+                                                    <tr>
+                                                        <!-- <th data-field="state" data-checkbox="true"></th>
+                                                        <th data-formatter="runningFormatter">Index</th> -->
+                                                        <th data-field="name" data-formatter="nameFormatter" data-sortable="true" data-width="150">Nome</th>
+                                                        <th data-field="email" data-width="50" data-sortable="true">E-mail</th>
+                                                        <th data-field="dtCadastro" data-width="90" data-formatter="formataData" data-sortable="true">Data Cadastro</th>
+                                                        <th data-field="active" data-formatter="activeFormatter" data-width="70" data-sortable="true">Ativo</th>
+                                                        <th data-field="action" data-formatter="actionFormatter" data-events="actionEvents" >Ação</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                        <!-- /.card-body -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /.row -->
+                            <div>
+                            </div>
+                        </div>
+                        <!-- ./card-body -->
+                        <div class="card-footer">
+                            <div class="row">
+                            </div>
+                            <!-- /.row -->
+                        </div>
+                        <!-- /.card-footer -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+</div>
+
+{% endblock %} {% block script %}
+<!-- 
+<script src="../static/js/table/extensions/export/bootstrap-table-export.min.js"></script> -->
+<script src="../static/js/table/bootstrap-table.min.js"></script>
+<script src="../static/js/table/bootstrap-table-locale-all.min.js"></script>
+<link rel="stylesheet" href="../static/js/table/bootstrap-table.min.css">
+<!-- 
+
+<link href="../static/css/bootstrap-table.css" rel="stylesheet"> -->
+<!-- <script src="../static/js/table/bootstrap-editable.min.js"></script> -->
+
+
+<script src="{{ url_for('static', filename="js/pages/players/players.min.js")}}"></script> 
+{% endblock %}

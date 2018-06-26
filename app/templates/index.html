@@ -1,0 +1,248 @@
+<!--Extende da página base o conteúdo dela-->
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper" style="margin-left: 0;" >
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="overlay hide" id="divCarregando">
+                <i class="fa fa-refresh fa-spin"></i>
+              </div>
+              <div class="card-header">
+                <div class="row">
+                  <div class="col-md-5">
+                  <h5 class="card-title text" id="concurseHeader"> <!--CONCURSO ### - DATA--></h5>  
+                  </div>
+                <div class="input-group col-md-2" style="height:30px;" id="divSearch">
+                  <input type="text" class="form-control" placeholder="Search Concurse" id="txtConcurse">
+                  <div class="input-group-append" id="concurseSearch" style="cursor: pointer;">
+                    <span class="input-group-text btn btn-default"><i class="fa fa-search"></i></span>
+                  </div>
+                </div>
+                  <div class="col-md-5 text-right">
+                    <div class="card-tools">
+                     <button type="button" class="btn btn-tool hide" title="Enviar E-mail" id="btn-email">
+                            <i class="fa fa-envelope"></i> E-mail Manual
+                      </button> 
+                      <button type="button" class="btn btn-tool hide" title="Verificar Jogo Online" id="btn-checkOnline">
+                        <i class="fa fa-cloud-download"></i> Verifica Jogo Online
+                      </button>  
+                      <!-- <button type="button" class="btn btn-tool" title="Verificar Online">
+                        <i class="fa fa-cloud-download"></i>
+                      </button> -->
+                      <!-- <button type="button" class="btn btn-tool" title="Configurações" id="btn-config">
+                          <i class="fa fa-cogs"></i>
+                        </button>                 -->
+                  <!--<div class="btn-group" id="groupConfig">
+                        <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
+                          <i class="fa fa-wrench"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" role="menu">
+                          <a href="#" class="dropdown-item" id="btn-checkOnline"><i class="fa fa-cloud-download"></i> Verificar Online</a>-->
+                          <!-- <a href="#" class="dropdown-item"><i class="fa fa-cogs"></i> Configurações</a> -->
+                          <!-- <a href="#" class="dropdown-item">Something else here</a>
+                          <a class="dropdown-divider"></a>
+                          <a href="#" class="dropdown-item">Separated link</a> -->
+                        <!--</div>
+                      </div>-->
+                    </div>
+                  </div>
+              </div>
+
+              
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div id="divEmail" class="col-md-12 hide">
+                  <div class="callout callout-success text-success">
+                      <h5>
+                      <i class="fa fa-check-circle"></i> E-mail Enviado com sucesso!</span>
+                      </h5>
+                  </div>
+                </div>
+                
+                <div class="row" id="rowPrincipal">
+                    <!--<div>-->
+                    <div class="overlay" id="divCarregandoGraph" style="margin:0 auto; text-align:center;width: 100%; height: 150px;">
+                      <h4>Carregando..</h4>
+                      <i class="fa fa-refresh fa-spin"></i>
+                    </div>
+                    <!--</div>-->
+                  <div class="col-md-8">
+                    <p class="text-center">
+                      <strong id="lot_game" style="font-size:17px;"><!--JOGO--></strong>
+                    </p>
+                    
+                    <div id="chart" class="chart hide" style="min-height: 380px; max-height:100%; height:auto; overflow-x: auto;">
+                      <!-- Sales Chart Canvas -->
+                      <canvas id="loto-chart" style="height: 100%; width: 680px;" width="680"></canvas>
+                    </div>
+                    <!-- /.chart-responsive -->
+                  </div>
+                  <!-- /.col -->
+
+                  <div class="col-md-4">
+                    <p class="text-center hide" id="pontuationStats" style="font-size:18px;">
+                      <strong>Pontuação</strong>
+                      <a href="#" > <i class="fa fa-info-circle text-primary" id="pontuacaoPopover" title="Legenda - Cores" data-toggle="popover" data-placement="bottom"  data-html="true" data-trigger="hover"
+                      data-content="
+                      <div style='display:block;'>
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-danger' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 15 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-success' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 14 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-warning' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 13 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-info' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 12 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-info' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> 11 Pontos</strong></span>
+                      </p>
+
+                      <p class='d-flex text-left border-bottom' style='display:inline-flex;'>
+                      <span class='info-box-icon badge bg-gray' style='width:24px; height:24px; margin:0 7px 5px 0;'> </span>
+                      <span class='description-header'>  <strong> Sem Pontuação</strong></span>
+                      </p>
+                    </div>
+                      "
+                      ></i></a>
+                    </p>
+                    
+                    <div class="overlay hide" id="divCarregandoJogos" style="margin:0 auto; text-align:center; height: 200px;">
+                      <h3>Processando os jogos..</h3>
+                      <i class="fa fa-refresh fa-spin"></i>
+                    </div>
+
+                    <div id="noGame" class="hide text-center">
+                        <h5>Não há jogo(s) para este concurso!</h5>
+                    </div>
+                    <div id="hasGame" class="hide">
+                    
+                    <div id="gamePerson" style="max-height: 50%; overflow-x: auto; margin:0 auto; text-align:center; width: 90%;">
+                              <!-- <div class="progress-group">
+                                  <a title="Autor" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Diego Galante">Jogo  77</a> - 10 dezenas sorteadas!
+                                  <span class="float-right"><b><span class="badge bg-gray">10</span></b> / <span class="badge bg-danger">15</span></span>
+                                  <div class="progress progress-sm active">
+                                    <div class="progress-bar bg-gray progress-bar-striped" role="progressbar" aria-valuenow="11" aria-valuemin="0" aria-valuemax="15" id="progressBar4">
+                                    </div>
+                                  </div>
+                                </div> -->
+                                <!-- /.progress-group -->
+                    </div>
+                    
+                    <div class="col-sm-12 col-12">
+                      <div class="description-block">
+                        <p class="text-center" style="font-size:18px;">
+                          <strong>Quantia a Recolher dos Bilhetes</strong>
+                        </p>
+                        <h5 class="description-header" id="amount_ticket">R$ 4,00 </h5>
+                        <!-- <h5 class="description-header text-gray">R$ 0,00</h5> -->
+                      </div>
+                      <!-- /.description-block -->
+                    </div>
+                  </div>
+                </div>
+                  <!-- /.col -->
+
+
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- ./card-body -->
+              <div class="card-footer">
+                <div class="row">
+                  <div class="col-sm-2-5 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A mais que o concurso passado!" id="percent15">17%</span>
+                      <h5 class="description-header" id="shared15"><!--VALOR PAGO--></h5>
+                      <span class="description-text">15 Pontos</span>
+                      <br/>
+                      <span id="hit15"><!--GANHADORES--></span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-2-5 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="Mesmo valor que o concurso passado!" id="percent14"><i class="fa fa-caret-left"></i> 0%</span>
+                      <h5 class="description-header" id="shared14"><!--VALOR PAGO--></h5>
+                      <span class="description-text">14 Pontos</span>
+                      <br/>
+                      <span id="hit14"><!--GANHADORES--></span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-2-5 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A mais que o concurso passado!" id="percent13"><i class="fa fa-caret-up"></i> 20%</span>
+                      <h5 class="description-header" id="shared13"><!--VALOR PAGO--></h5>
+                      <span class="description-text">13 Pontos</span>
+                      <br/>
+                      <span id="hit13"><!--GANHADORES--></span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-2-5 col-6">
+                    <div class="description-block border-right">
+                      <span class="description-percentage" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A menos que o concurso passado!" id="percent12"><i class="fa fa-caret-down"></i> 18%</span>
+                      <h5 class="description-header" id="shared12"><!--VALOR PAGO--></h5>
+                      <span class="description-text">12 Pontos</span>
+                      <br/>
+                      <span id="hit12"><!--GANHADORES--></span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                  <div class="col-sm-2-5 col-6">
+                    <div class="description-block">
+                      <span class="description-percentage" data-toggle="popover" data-trigger="hover" data-placement="top" data-content="A menos que o concurso passado!" id="percent11"><i class="fa fa-caret-down"></i> 18%</span>
+                      <h5 class="description-header" id="shared11"><!--VALOR PAGO--></h5>
+                      <span class="description-text">11 Pontos</span>
+                      <br/>
+                      <span id="hit11"><!--GANHADORES--></span>
+                    </div>
+                    <!-- /.description-block -->
+                  </div>
+                  <!-- /.col -->
+                </div>
+                <!-- /.row -->
+              </div>
+              <!-- /.card-footer -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+  </div>
+{% endblock %}
+
+{% block script %}
+<script src="{{ url_for('static', filename="js/pages/index/pr_grafico.min.js")}}"></script>
+{% endblock %}

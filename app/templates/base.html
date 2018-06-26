@@ -1,0 +1,190 @@
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+<title>{%block title%}Loto Fácil{%endblock%}</title>
+
+<link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename="img/fav.ico")}}"/>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="{{ url_for('static', filename="css/font-awesome.min.css" )}}">
+<!-- Theme style -->
+<link rel="stylesheet" href="{{ url_for('static', filename="css/adminlte.min.css" )}}">
+
+</head>
+<body class="hold-transition sidebar-mini">
+
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <div>
+  <nav class="main-header navbar navbar-expand bg-white navbar-light border-bottom" style="margin-left: 0">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url_for('index')}}" class="nav-link"><i class="fa fa-bar-chart-o"></i> Principal</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url_for('players')}}" class="nav-link"><i class="fa fa-users"></i> Jogadores</a>
+      </li>
+      <!-- <li class="nav-item d-none d-sm-inline-block">
+        <a href="{{ url_for('games')}}" class="nav-link">Jogos</a>
+      </li> -->
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link" data-toggle="modal" data-target="#modalConfiguracao"><i class="fa fa-gears"></i> Configurações</a>
+      </li>
+    </ul>
+   
+  </nav>
+</div>
+ <!-- /.navbar -->    
+
+  {% block content%}
+    <!--Indica que o conteúdo de outras paginas vai ser inserido dentro do bloco content-->
+  {% endblock %}
+ 
+   
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="modalConfiguracao" tabindex="-1" role="dialog" aria-labelledby="modalConfiguracaoLabel" aria-hidden="true" style="margin-left:0px">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalConfiguracaoLabel">Configurações </h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-12" style="margin: 0 auto;">
+              <!-- Custom Tabs -->
+              <div class="card">
+                <div class="card-header p-0  float-left">
+                  <ul class="nav nav-pills ml-auto p-2">
+                    <li class="nav-item">
+                      <a class="nav-link active" href="#tab_1" data-toggle="tab">Jogos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#tab_2" data-toggle="tab">E-mail</a>
+                    </li>
+                  </ul>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body" style="min-height: 300px; max-height:300px; overflow-y: auto;">
+                  <div class="tab-content">
+                    <div class="tab-pane active" id="tab_1">
+                     <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="VerificaJogoOnline" />
+                        <label class="form-check-label" for="VerificaJogoOnline">Pesquisar jogo online<label>
+                      </div>
+                      <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="CalcularDezenasSemPontuacao" />
+                          <label class="form-check-label" for="CalcularDezenasSemPontuacao">Calcular dezenas que não marcaram pontos<label>
+                      </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                    <div class="tab-pane" id="tab_2">
+                      <p>
+                        <span>Quantidade mínima do bilhete para o envio de e-mail:</span>
+                        <div class="input-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text">
+                              <i class="fa fa-dollar"></i>
+                            </span>
+                          </div>
+                          <input type="number" step=0.1 class="col-md-4 form-control text-center" placeholder="0,00" id="minAmountToSentEmail">
+                        </div>
+                      </p>
+                      <!-- <p>
+                    <span>Quantidade mínima de pontos para o envio de e-mail:</span>
+                    <br/>
+                    <div class="form-select">
+                      <select id="selectPoints" style="height: 30px;">
+                        <option selected="selected">11 Pontos</option>
+                        <option >12 Pontos</option>
+                        <option >13 Pontos</option>
+                        <option >14 Pontos</option>
+                        <option >15 Pontos</option>
+                      </select>
+                    </div>
+  
+                    <div class="icheckbox_flat-green disabled" aria-checked="false" aria-disabled="true" style="position: relative;"><input type="checkbox" class="flat-red" disabled="" style="position: absolute; opacity: 0;"><ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins></div>
+  
+                  </p> -->
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="EmailManual" />
+                          <label class="form-check-label" for="EmailManual">Envio de e-mail manual<label>
+                        </div>
+                        <div class="form-check">
+                          <input type="checkbox" class="form-check-input" id="EmailAutomatico" />
+                          <label class="form-check-label" for="EmailAutomatico">Envio de e-mail automático<label>
+                        </div>
+                    </div>
+                    <!-- /.tab-pane -->
+                  </div>
+                  <!-- /.tab-content -->
+                </div>
+                <!-- /.card-body -->
+              </div>
+              <!-- ./card -->
+            </div>
+            <!-- /.col -->
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END MODAL-->
+
+              
+  <!-- Main Footer -->
+  <footer class="main-footer" style="margin-left: 10px; padding: 10px;">
+    <!-- To the right -->
+    <div class="float-right d-none d-sm-inline">
+        <!--<strong>Copyright &copy; 2018 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> Todos os direitos reservados.-->
+        <strong><a href="https://adminlte.io">AdminLTE.io</a>.</strong> Todos os direitos reservados.
+    </div>
+    <!-- Default to the left -->
+    <strong>Diego Galante &copy; 2018</strong>
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+
+<!-- REQUIRED SCRIPTS -->
+
+  <!-- Google Font: Source Sans Pro -->
+
+<!-- jQuery -->
+<!-- <script src="{{ url_for('static', filename="plugins/jquery/jquery.min.js" )}}" ></script> -->
+
+<script src="{{ url_for('static', filename="js/jquery3.3.1.js" )}}" ></script>
+<!-- Bootstrap 4 -->
+<script src="{{ url_for('static', filename="js/bootstrap4/popper.min.js" )}}"></script>
+<script src="{{ url_for('static', filename="js/bootstrap4/tooltip.min.js" )}}"></script>
+
+<script src="{{ url_for('static', filename="js/bootstrap4/bootstrap.min.js" )}}"></script>
+<script src="{{ url_for('static', filename="js/bootstrap4/bootstrap.bundle.min.js" )}}"></script>
+
+<link rel="stylesheet" href="{{ url_for('static', filename="css/bootstrap-editable.css" )}}">
+<script src="{{ url_for('static', filename="js/editable/bootstrap-editable.min.js")}}"></script> 
+<!-- AdminLTE App -->
+<!-- <script src="{{ url_for('static', filename="js/adminlte.min.js" )}}"></script> -->
+
+<script src="{{ url_for('static', filename="plugins/chart.js/Chart.min.js" )}}"></script>
+
+<script src="{{ url_for('static', filename="js/pages/config_/config_.min.js")}}"></script>
+<!-- <script src="{{ url_for('static', filename="js/pages/config_/config_.js")}}"></script>  -->
+
+<!-- <link type="application/octet-stream" href="{{ url_for('static', filename="fonts/fontawesome-webfont.woff")}}" > -->
+
+{% block script %}
+  
+{% endblock  %}
+</body>
+</html>
