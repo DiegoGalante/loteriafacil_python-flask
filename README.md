@@ -2,7 +2,7 @@
 
 Sistema de uso pessoal baseado na loteria, apenas com o intuito de testar a linguagem em que estou estudando atualmente (Python+Flask).
 
-Imagens do projeto podem ser acessadas em [Loteria Fácil - Imagens](https://drive.google.com/folderview?id=121vKkNHt1FrecUyWdeal1Qf7-Pu0hfz3), meu portfólio. 
+Imagens do projeto podem ser acessadas em [Loteria Fácil_Imagens](https://drive.google.com/folderview?id=121vKkNHt1FrecUyWdeal1Qf7-Pu0hfz3), meu portfólio. 
 
 Há uma versão funcional do sistema em c# Windows Form. Estou trazendo para web e vou tentar aplicar novas funções e técnicas para sempre estar melhorando.
 
@@ -63,22 +63,22 @@ Atualmente está buscando o concurso anterior como referência;
 
 # Imagens do Sistema
 ### Página Principal
-!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/1 - index_0.png)
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/1_index_0.png)
 
-!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/2 - index_1.png)
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/2_index_1.png)
 
-!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/3 - index_2.png)
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/3_index_2.png)
 
-!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/4 - index_3.png)
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/4_index_3.png)
 
-!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/5 - index_4.png)
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/5_index_4.png)
 
 ### Configuração
-!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/6 - config_pt1.png)
+!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/6_config_pt1.png)
 
-!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/7 - config_pt2.png)
+!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/7_config_pt2.png)
 
 ### Players
-!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/8 - players.png)
+!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/8_players.png)
 
-!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/9 - players_1.png)
+!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/9_players_1.png)
