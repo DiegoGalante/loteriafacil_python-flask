@@ -6,6 +6,13 @@ var enumConfiguracao = {
     VerificaJogoOnline: 5
 }
 
+var enumValoresJogos = {
+    _15Dezenas: 2.0,
+    _16Dezenas: 32.0,
+    _17Dezenas: 272.0,
+    _18Dezenas: 1632.0
+}
+
 function formatNumber(num) {
     return num
         .toFixed(2) // always two decimal digits
