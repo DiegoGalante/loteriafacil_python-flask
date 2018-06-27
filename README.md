@@ -52,7 +52,7 @@ Com este sistema é possível aplicar os conhecimento:
 ### Correção
 * Corrigir a porcentagem do concurso pesquisado referente ao concurso atual;
 ```
-	Atualmente está buscando o concurso anterior como referência;
+Atualmente está buscando o concurso anterior como referência;
 ```
 ### Backlog
 * Página de Login/Cadastro;
