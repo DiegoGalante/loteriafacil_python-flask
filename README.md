@@ -2,7 +2,7 @@
 
 Sistema de uso pessoal baseado na loteria, apenas com o intuito de testar a linguagem em que estou estudando atualmente (Python+Flask).
 
-Imagens do projeto podem ser acessadas em [Loteria Fácil_Imagens](https://drive.google.com/folderview?id=121vKkNHt1FrecUyWdeal1Qf7-Pu0hfz3), meu portfólio. 
+Imagens do projeto podem ser acessadas em [Imagens Loteria Fácil](https://drive.google.com/folderview?id=121vKkNHt1FrecUyWdeal1Qf7-Pu0hfz3), meu portfólio, ou visualizadas logo abaixo no final deste arquivo. 
 
 Há uma versão funcional do sistema em c# Windows Form. Estou trazendo para web e vou tentar aplicar novas funções e técnicas para sempre estar melhorando.
 
