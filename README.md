@@ -60,3 +60,25 @@ Atualmente está buscando o concurso anterior como referência;
 * Recuperação de senha; 
 * Página de Lockscreen;
 * Página de pesquisa avançada de concursos;
+
+# Imagens do Sistema
+### Página Principal
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/1 - index_0.png)
+
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/2 - index_1.png)
+
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/3 - index_2.png)
+
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/4 - index_3.png)
+
+!['Página Principal'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/5 - index_4.png)
+
+### Configuração
+!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/6 - config_pt1.png)
+
+!['Configuração'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/7 - config_pt2.png)
+
+### Players
+!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/8 - players.png)
+
+!['Players'](https://github.com/DiegoGalante/loteriafacil/blob/master/app/static/img/images_app/9 - players_1.png)
