@@ -69,9 +69,16 @@ class Utils(object):
         
         return novoValor.strip()
 
-    def OrganizaJogo(jogoJson, tipoJogo):
+    def OrganizaJogo(jogoJson, tipoJogo, jogoOriginal = None):
         jogos = []
         jogo = []
+        dic_final = []
+        
+        if tipoJogo == 2:
+            dic_final = ['0','0','0','0','0','0','0','0','0','0','0','0','0','0','0']
+        elif tipoJogo == 1:
+            dic_final = ['0','0','0','0','0','0']
+
         resultado = ""
         jogo1 = ""
         #Ordena o vetor
@@ -93,6 +100,24 @@ class Utils(object):
                 flag = False
         jogoJson = lista
 
+        if jogoOriginal is not None:
+            for j, itemModificar in enumerate(jogoJson):
+                for i, itemOriginal in enumerate(jogoOriginal):
+                    if int(itemModificar) == int(itemOriginal) and itemOriginal not in dic_final:
+                        dic_final[i] = int(itemOriginal)
+
+                if itemModificar not in dic_final:
+                        dic_final[j] = int(itemModificar)
+
+            for j, item in enumerate(jogoJson):
+                if item not in dic_final:
+                    for k, itemT in enumerate(dic_final):
+                        if int(itemT) == 0:
+                            dic_final[k] = int(jogoJson[j])
+                            break
+                            
+            jogoJson = dic_final
+            
         if int(tipoJogo) == int(TipoJogo.lotofacil.value):
             for l in range(15):
                 jogo.append(str(jogoJson[l]))
