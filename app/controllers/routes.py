@@ -8,7 +8,7 @@ from app.controllers import personCTRL as _pesCTRL, personLotteryCTRL as _pesLot
 from app.controllers import configurationCTRL as _configCTRL
 from app.controllers.utilities.enums import TipoJogo as _enumTipoJogo
 
-from app.models.tables import Lottery 
+from app.models.tables import Lottery, PersonGame
 
 import requests
 import time 
@@ -178,3 +178,24 @@ def saveConfiguration():
         return jsonify({'result': False})
     finally:
         print("Tempo da execução do saveConfiguration: {0}".format(time.time()-t0))
+
+
+@app.route("/savePersonGame", methods=['POST'])
+def savePersonGame():
+    try:
+        t0 = time.time()
+        if request.method == 'POST' and request.headers['Content-Type'] == 'application/json':
+            objJson = request.get_json()
+
+            personGame = PersonGame(0, int(objJson['concurse']), '', list(objJson['games']),0, 0, int(objJson['pes_id']))
+            if _pesLotCTRL.GravaJogoPessoa(personGame):
+                return jsonify({'result': True})
+            else:
+                return jsonify({'result': False})
+        else:
+            return jsonify({'result': False})
+    except Exception as e:
+        print("Erro ao savePersonGame. Erro: {0}".format(e.args))
+        return jsonify({'result': False})
+    finally:
+        print("Tempo da execução do savePersonGame: {0}".format(time.time()-t0))
