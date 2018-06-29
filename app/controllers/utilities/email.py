@@ -44,7 +44,7 @@ def EnviaEmail(objConcurso, manually, pes_id=0):
         concurso = objConcurso
         
         pessoa = Person(None, None, None, None, None, None)
-        jogosPessoa = PersonGame(None, None, None, None, None, None)
+        jogosPessoa = PersonGame(None, None, None, None, None, None, None)
         pessoas = []
         if pes_id > 0:
             print("Id da pessoa informado. pes_id: {0}".format(pes_id))

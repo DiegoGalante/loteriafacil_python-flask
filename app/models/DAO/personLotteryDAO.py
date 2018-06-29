@@ -75,7 +75,7 @@ def RecuperaJsonPrincipal(numConcurso=0):
 
 def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
     
-    pessoa = PersonGame(None, None, None, None, None, None)
+    pessoa = PersonGame(None,None,None,None,None,None,None)
     pessoas = []
     totalBilhetes = Decimal(0)
     sqlCommand = ""
@@ -107,7 +107,7 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
             _amount = Decimal(rowPessoas[5])
             totalBilhetes += _amount
 
-            pessoa = PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], _amount)
+            pessoa = PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], _amount, rowPessoas[6])
             if to_json:
                 pessoas.append(pessoa.__str__())
             else:
@@ -121,7 +121,7 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
         return pessoas
 
     
-    pessoa = PersonGame(None, None, None, None, None, None)
+    pessoa = PersonGame(None,None,None,None,None,None,None)
     pessoas = []
     totalBilhetes = Decimal(0)
 
@@ -148,7 +148,7 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
             _amount = Decimal(rowPessoas[5])
             totalBilhetes += _amount
 
-            pessoa = PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], _amount)
+            pessoa = PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], _amount, rowPessoas[6])
             if to_json:
                 pessoas.append(pessoa.__str__())
             else:
@@ -160,3 +160,42 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
         return {'pessoas': pessoas, 'totalBilhetes': totalBilhetes}
     else:
         return pessoas
+
+
+def GravarJogo(personGame):
+    print("Grava Jogo..")
+    sqlCommand = """
+                  EXEC SP_SAVE_PERSON_GAME ?, ?, ?, ?
+                 """
+
+    formattedSQL = [int(personGame.id),
+                    int(personGame.concurse),
+                    str(personGame.game),
+                    int(personGame.pes_id)
+                    ]
+
+    print("EXEC SP_SAVE_PERSON_GAME {0}".format(formattedSQL))
+    # cursor = db.engine.raw_connection().cursor()
+    # cursor.execute(sqlCommand, formattedSQL)
+    # cursor.commit()
+    print("Jogo salvo com sucesso!")
+
+
+def VerificaJogo(jogo, tpj_id = 2):
+    """Verifica se não existe nenhum jogo igual que já foi sorteado."""
+    params = []
+    sqlCommand = """
+                    SELECT count(*) FROM tb_lottery WHERE lot_game =  ?
+                    and tpj_id = ?
+                 """
+    params.append(jogo)
+    params.append(tpj_id)
+
+    # print(sqlCommand)
+    # print(params)
+    connection = db.engine.connect()
+    result = connection.execute(sqlCommand, params)
+    rows = result.fetchall()
+    connection.close()
+    print("Retorno VerificaJogo: {0}".format(rows[0][0]))
+    return int(rows[0][0])

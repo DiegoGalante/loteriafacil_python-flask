@@ -66,17 +66,18 @@ class Person(object):
 
 class PersonGame(object):
     	
-		def __init__(self, _id, concurse, name, game, hits, ticket_amount):
+		def __init__(self, _id, concurse, name, game, hits, ticket_amount, pes_id):
 				self.id = _id
 				self.concurse = concurse
 				self.name = name
 				self.game = game
 				self.hits = hits
 				self.amount = ticket_amount
+				self.pes_id = pes_id
 				pass
 	
 		def __str__(self):
-				return { 'id' : self.id, 'concurse' : self.concurse,'name' : self.name, 'game' : self.game, 'hits' : self.hits, 'amount' : GenericJsonEncoder.default(None,self.amount) }
+				return { 'id' : self.id, 'concurse' : self.concurse,'name' : self.name, 'game' : self.game, 'hits' : self.hits, 'amount' : GenericJsonEncoder.default(None,self.amount), 'pes_id' : self.pes_id }
 
 class JsonDashBoard(object):
 		def __init__(self, lot_concurse, dtConcurse, dtExtense, lot_game, hit15, shared15, percent15, hit14, shared14, percent14, hit13, shared13, percent13, hit12, shared12, percent12, hit11, shared11, percent11, amount_tickets):
