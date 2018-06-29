@@ -6,6 +6,9 @@ var imported = document.createElement('script');
 imported.src = '/static/js/utils.js';
 document.head.appendChild(imported);
 
+imported.src = '/static/js/pages/index/pr_grafico.js';
+document.head.appendChild(imported);
+
 $(document).ready(function () {
     carregaConfiguracao();
 });
@@ -49,6 +52,7 @@ function carregaConfiguracao() {
             }
 
             validateConfiguration();
+            
         }),
         error: (function (erro) {
             console.log(erro)
@@ -79,7 +83,7 @@ function validateConfiguration() {
 }
 
 function saveConfig(new_config) {
-    console.log(JSON.stringify(new_config));
+    // console.log(JSON.stringify(new_config));
     $.ajax({
         type: 'POST',
         contentType: 'application/json',
@@ -110,7 +114,7 @@ function limpaObjetoNovaCofiguracao() {
 $("#minAmountToSentEmail").keydown(function (e) {
 
     if (e.currentTarget.value.length >= 2 && e.currentTarget.value[0] == 0) {
-        console.log(e.currentTarget.value)
+        // console.log(e.currentTarget.value)
         e.currentTarget.value = e.currentTarget.value.slice(1, e.currentTarget.value.length)
         $("#minAmountToSentEmail").val(e.currentTarget.value);
     }
@@ -145,7 +149,7 @@ $("#minAmountToSentEmail").blur(function () {
     _objSaveConfiguration.valor_antigo = _valor_antigo;
     _objSaveConfiguration.enum_config = enumConfiguracao.ValorMinimoParaEnviarEmail;
 
-    console.log(_objSaveConfiguration)
+    // console.log(_objSaveConfiguration)
     saveConfig(_objSaveConfiguration);
 });
 
@@ -155,8 +159,9 @@ $('#CalcularDezenasSemPontuacao').click(function () {
     _objSaveConfiguration.valor_campo = $('#CalcularDezenasSemPontuacao')[0].checked;
     _objSaveConfiguration.enum_config = enumConfiguracao.CalcularDezenasSemPontuacao;
 
-    console.log(_objSaveConfiguration)
+    // console.log(_objSaveConfiguration)
     saveConfig(_objSaveConfiguration);
+    carregaPagina();
 });
 
 $('#VerificaJogoOnline').click(function () {
@@ -165,7 +170,7 @@ $('#VerificaJogoOnline').click(function () {
     _objSaveConfiguration.valor_campo = $('#VerificaJogoOnline')[0].checked;
     _objSaveConfiguration.enum_config = enumConfiguracao.VerificaJogoOnline;
 
-    console.log(_objSaveConfiguration)
+    // console.log(_objSaveConfiguration)
     saveConfig(_objSaveConfiguration);
 });
 
