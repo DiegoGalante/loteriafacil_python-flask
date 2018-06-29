@@ -40,17 +40,24 @@ $(document).ready(function () {
     }
   });
 
-  function calcPorcentagem(dezenas) {
-    // campo.attr('style', "width: " + ();
-    // campo.attr('title', ((dezenas * 100) / 15).toFixedDown(2) + "% de acerto.");
-    return ((dezenas * 100) / 15);
-  }
+  //CARREGA O GRAFICO
+  //FIM - GRAFICO
 
-  Number.prototype.toFixedDown = function (digits) {
-    var n = this - Math.pow(10, -digits) / 2;
-    n += n / Math.pow(2, 53); // added 1360765523: 17.56.toFixedDown(2) === "17.56"
-    return n.toFixed(digits);
-  }
+  $('[data-toggle="popover"]').popover();
+});
+
+Number.prototype.toFixedDown = function (digits) {
+  var n = this - Math.pow(10, -digits) / 2;
+  n += n / Math.pow(2, 53); // added 1360765523: 17.56.toFixedDown(2) === "17.56"
+  return n.toFixed(digits);
+}
+
+function calcPorcentagem(dezenas) {
+  // campo.attr('style', "width: " + ();
+  // campo.attr('title', ((dezenas * 100) / 15).toFixedDown(2) + "% de acerto.");
+  return ((dezenas * 100) / 15);
+}
+
 
   //FUNÇÕES
   function carregaPagina(concurse = 0) {
@@ -103,7 +110,7 @@ $(document).ready(function () {
           carregaPagina();
         }
         else {
-          console.log(data.msg);
+          // console.log(data.msg);
         }
 
       }),
@@ -127,12 +134,12 @@ $(document).ready(function () {
         if (data.return) {
         }
         else {
-          console.log(data.msg);
+          // console.log(data.msg);
         }
         if (data.personGame.length == undefined)
           data.personGame = []
 
-        console.log(data)
+        // console.log(data)
         _objPrincipal.personGame = data.personGame;
         _objPrincipal.concurse.amount_tickets = data.amount_tickets;
 
@@ -460,12 +467,6 @@ $(document).ready(function () {
     })
   }
   //FIM FUNÇÕES
-
-  //CARREGA O GRAFICO
-  //FIM - GRAFICO
-
-  $('[data-toggle="popover"]').popover();
-});
 
 // $('#myButton').on('click', function () {
 //   var $btn = $(this).button('loading')
