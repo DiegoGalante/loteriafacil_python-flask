@@ -102,20 +102,20 @@ class Utils(object):
 
         if jogoOriginal is not None:
             for j, itemModificar in enumerate(jogoJson):
-                for i, itemOriginal in enumerate(jogoOriginal):
-                    if int(itemModificar) == int(itemOriginal) and itemOriginal not in dic_final:
-                        dic_final[i] = int(itemOriginal)
-
                 if itemModificar not in dic_final:
-                        dic_final[j] = int(itemModificar)
+                    for i, itemOriginal in enumerate(jogoOriginal):
+                        if int(jogoJson[j]) == int(jogoOriginal[i]) and itemOriginal not in dic_final:
+                            dic_final[i] = int(itemOriginal)
 
-            for j, item in enumerate(jogoJson):
-                if item not in dic_final:
-                    for k, itemT in enumerate(dic_final):
-                        if int(itemT) == 0:
-                            dic_final[k] = int(jogoJson[j])
-                            break
-                            
+
+            dic_not_in = [x for x in jogoJson if x not in jogoOriginal]
+            for i, itemD in enumerate(dic_final):
+                if int(itemD) == 0:
+                    for j, itemN in enumerate(dic_not_in):
+                        if int(itemN) not in dic_final:
+                            dic_final[i] = int(dic_not_in[j])
+                            break;
+        
             jogoJson = dic_final
             
         if int(tipoJogo) == int(TipoJogo.lotofacil.value):

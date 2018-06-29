@@ -13,4 +13,8 @@ class GenericJsonEncoder(json.JSONEncoder):
             return str(obj.strftime('%d/%m/%Y'))
         if isinstance(obj, decimal.Decimal):
             return float(obj)
+        if isinstance(obj, int):
+            return float(obj)
+        if isinstance(obj, float):
+            return float(obj)
         return json.JSONEncoder.default(self, obj)
