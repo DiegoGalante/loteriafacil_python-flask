@@ -139,7 +139,7 @@ def ContJogosPessoaSemVerificar(numConcurso, tpj_id, pes_id=0):
     result = connection.execute(sqlCommand, params)
     rows = result.fetchall()
     connection.close()
-    print("Retorno ContJogosPessoaSemVerificar: {0}".format(rows[0][0]))
+    # print("Retorno ContJogosPessoaSemVerificar: {0}".format(rows[0][0]))
     return int(rows[0][0])
     
 
@@ -159,7 +159,7 @@ def ContJogosPessoaSemVerificar(numConcurso, tpj_id, pes_id=0):
 def ExecuteCheckGame(numConcurso, tpj_id, pes_id):
     try:
         import time
-        print("Iniciando a execução da SP_CHECK_GAME")
+        # print("Iniciando a execução da SP_CHECK_GAME")
         sqlCommand = """
                     EXEC SP_CHECK_GAME ?, ?, ?
                     """
@@ -176,7 +176,7 @@ def ExecuteCheckGame(numConcurso, tpj_id, pes_id):
                 ExecuteCheckGame(numConcurso, tpj_id, pes_id)
                 time.sleep(.300)
 
-        print("Execução concluída com sucesso!")
+        # print("Execução concluída com sucesso!")
         return True
     except Exception as ex:
         print("Ocorreu um erro ao executar oExecuteCheckGame! Erro: {0}".format(ex.args))

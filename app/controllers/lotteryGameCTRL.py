@@ -28,16 +28,24 @@ def VerificaJogo(tipoJogo, concurso):
 def GravarJogo(loteria):
     return _lotBD.GravarJogo(loteria)   
 
-def VerificaJogoOnline(verify=False, pes_id=0):
+def VerificaJogoOnline(num_concurse, pes_id=0):
     try:
         t0 = time.time()
         pes_id = 1 #DIEGO
         _objConfiguration = _configCTRL.RecuperaConfiguracao(pes_id, False)
         lottery_atual = RecuperaUltimoJogo(False)
-        
+
+        try:
+            num_concurse =  int(num_concurse)
+            if _lotBD.VerificaJogo(_enumGameType.lotofacil.value, num_concurse):
+                num_concurse = 0
+        except:
+            num_concurse =0
+
+        # print("Número para o token: {0}".format(num_concurse))
         if lottery_atual.dtNextConcurse <= datetime.today() and _objConfiguration.check_game_online and _utilCTRL.CheckConnection():
             lottery = Lottery(None,None,None,None,None,None,None,None,None,None,None,None,None,None,None,None)
-            page = requests.get(Token().GetToken())
+            page = requests.get(Token().GetToken(num_concurse))
             # page = requests.get(_utilCTRL.GetToken())
             soup = BeautifulSoup(page.text, 'html.parser')
             resultadoJson = json.loads(str(soup))

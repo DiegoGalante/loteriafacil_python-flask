@@ -114,7 +114,7 @@ class Utils(object):
                     for j, itemN in enumerate(dic_not_in):
                         if int(itemN) not in dic_final:
                             dic_final[i] = int(dic_not_in[j])
-                            break;
+                            break
         
             jogoJson = dic_final
             

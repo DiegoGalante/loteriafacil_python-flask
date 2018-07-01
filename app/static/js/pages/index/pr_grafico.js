@@ -22,7 +22,14 @@ $(document).ready(function () {
 
   $("#btn-checkOnline").click(function () {
     divCarregando(true);
-    checkOnline(true);
+    num_concurse = 0
+    try {
+      num_concurse = parseInt($("#txtConcurse").val());
+    } catch (error) {
+      num_concurse = 0;
+    }
+
+    checkOnline(num_concurse);
   });
 
   $("#btn-email").click(function () {
@@ -95,12 +102,12 @@ function carregaPagina(concurse = 0) {
   });
 }
 
-function checkOnline(checkOnline = false) {
+function checkOnline(check_game = 0) {
   $.ajax({
     type: 'POST',
     contentType: 'application/json',
     async: true,
-    url: '/checkOnline/' + checkOnline,
+    url: '/checkOnline/' + check_game,
     data: JSON.stringify(_objPrincipal),
     success: (function (data) {
       divCarregando(false);

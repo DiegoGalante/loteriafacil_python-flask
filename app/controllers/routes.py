@@ -76,17 +76,16 @@ def sendEmail():
 
     
 
-@app.route("/checkOnline/<checkOnline>", methods=['POST'])
-def checkJogoOnline(checkOnline):
+@app.route("/checkOnline/<check_game>", methods=['POST'])
+def checkJogoOnline(check_game):
     try:
         t0 = time.time()
         # da pra melhorar isso aqui
         # usar  objeto de configuracao e ver se a config de verificar jogo online está ativada
-        if checkOnline and request.method == 'POST' and request.headers['Content-Type'] == 'application/json':
+        if request.method == 'POST' and request.headers['Content-Type'] == 'application/json':
             checkJson = request.get_json()
             if _configCTRL.RecuperaConfiguracao(int(checkJson['configuration']['person']), False).check_game_online:
-                checkOnline = bool(checkOnline)
-                _lotCTRL.VerificaJogoOnline(checkOnline, int(checkJson['configuration']['person']))
+                _lotCTRL.VerificaJogoOnline(check_game, int(checkJson['configuration']['person']))
 
         return jsonify({'return': True, 'msg': 'Dados Atualizados com sucesso!'})
     except Exception as ex:

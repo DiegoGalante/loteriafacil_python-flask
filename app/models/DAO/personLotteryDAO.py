@@ -92,7 +92,7 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
         bool_pessoa = True
 
     _objConfiguration = _configDB.RecuperaConfiguracao(_pessoaDiego, False)
-    print("Configuração de Calcular dezenas que não marcaram pontos: {0}".format(_objConfiguration.calculate_tens_without_success))
+    # print("Configuração de Calcular dezenas que não marcaram pontos: {0}".format(_objConfiguration.calculate_tens_without_success))
     if bool_pessoa:
         if not _objConfiguration.calculate_tens_without_success:
             sqlCommand += " and pl_hits > 10 "
@@ -102,8 +102,8 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
 
     sqlCommand += " order by pl_hits desc"
 
-    print(sqlCommand)
-    print(params)
+    # print(sqlCommand)
+    # print(params)
     connection = db.engine.connect()
     result = connection.execute(sqlCommand, params)
     rows = result.fetchall()
