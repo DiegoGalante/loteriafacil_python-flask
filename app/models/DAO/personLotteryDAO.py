@@ -20,20 +20,20 @@ def RecuperaJsonPrincipal(numConcurso=0):
         numConcurso = ultimoConcurso
 
     # numConcurso = 1650
-    retornoPessoaJogo = RecuperaJogoPessoa(numConcurso,0,True)
+    # retornoPessoaJogo = RecuperaJogoPessoa(numConcurso,0,True)
     totalBilhetes = Decimal(0)
 
     jsonDashboard = JsonDashBoard(None, None, None, None, None, None, None, None,
                                   None, None, None, None, None, None, None, None, None, None, None, None)
     jsonDash = []
-    lista_final = []
+    # lista_final = []
     sqlCommand = """
                     select * from jsonDashboard({0})
                 """.format(numConcurso)
     connection = db.engine.connect()
     result = connection.execute(sqlCommand)
     rows = result.fetchall()
-    connection.close()
+    connection.close()    
     for row in rows:
         _concurse = row[0]
         _dtConcurse = row[1]
@@ -75,10 +75,9 @@ def RecuperaJsonPrincipal(numConcurso=0):
 
 def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
     
-    pessoa = PersonGame(None,None,None,None,None,None,None)
+    pessoa = PersonGame(None, None, None, None, None, None, None)
     pessoas = []
     totalBilhetes = Decimal(0)
-    sqlCommand = ""
     sqlCommand = "select * from jogoPessoa(?) "
     params = []
     params = [numConcurso]
@@ -111,47 +110,6 @@ def RecuperaJogoPessoa(numConcurso=0, pes_id=0, to_json=False):
 
     if len(rows) > 0:
         # print([type(PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], Decimal(rowPessoas[5]))) for rowPessoas in rows])
-        for rowPessoas in rows:
-            _amount = Decimal(rowPessoas[5])
-            totalBilhetes += _amount
-
-            pessoa = PersonGame(rowPessoas[0], rowPessoas[1], rowPessoas[2], rowPessoas[3], rowPessoas[4], _amount, rowPessoas[6])
-            if to_json:
-                pessoas.append(pessoa.__str__())
-            else:
-                pessoas.append(pessoa)
-            pessoa=[]
-
-    # print(pessoas)
-    if to_json:
-        return {'pessoas': pessoas, 'totalBilhetes': totalBilhetes}
-    else:
-        return pessoas
-
-    
-    pessoa = PersonGame(None,None,None,None,None,None,None)
-    pessoas = []
-    totalBilhetes = Decimal(0)
-
-    sqlCommand = ""
-    sqlCommand = "select * from jogoPessoa(?) "
-    param = []
-    params = [numConcurso]
-    
-    if pes_id > 0:
-        _pessoaDiego = 1
-        _objConfiguration = _configDB.RecuperaConfiguracao(_pessoaDiego, False)
-        if not _objConfiguration.calculate_tens_without_success:
-            sqlCommand += " where pl_hits > 10 "
-
-    sqlCommand += " order by pl_hits desc"
-
-    connection = db.engine.connect()
-    result = connection.execute(sqlCommand, params)
-    rows = result.fetchall()
-    connection.close()
-
-    if len(rows) > 0:
         for rowPessoas in rows:
             _amount = Decimal(rowPessoas[5])
             totalBilhetes += _amount
